@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8055DE702F373F170082CADE /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055DE6F2F373F170082CADE /* CameraPreview.swift */; };
+		8055DE722F373F3C0082CADE /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055DE712F373F3C0082CADE /* QRScannerController.swift */; };
+		8055DE742F37417B0082CADE /* BackendConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055DE732F37417B0082CADE /* BackendConfig.swift */; };
+		8055DE762F37418D0082CADE /* VerifyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055DE752F37418D0082CADE /* VerifyRequest.swift */; };
+		8055DE782F3741990082CADE /* VerifyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055DE772F3741990082CADE /* VerifyResponse.swift */; };
+		8055DE7A2F3744460082CADE /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055DE792F3744460082CADE /* MainViewModel.swift */; };
+		8055DE7C2F37450F0082CADE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055DE7B2F37450F0082CADE /* LoadingView.swift */; };
+		8055DE7E2F3745240082CADE /* ErrorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055DE7D2F3745240082CADE /* ErrorStateView.swift */; };
+		8055DE802F3745330082CADE /* ResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055DE7F2F3745330082CADE /* ResponseView.swift */; };
+		80BCA2A42F33583B005D02CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80BCA2A02F33583B005D02CE /* Assets.xcassets */; };
+		80BCA2A52F33583B005D02CE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BCA2A12F33583B005D02CE /* MainView.swift */; };
+		80BCA2A62F33583B005D02CE /* app.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BCA2A22F33583B005D02CE /* app.swift */; };
+		80BCA2A82F335A25005D02CE /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BCA2A72F335A25005D02CE /* ScannerView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8055DE6F2F373F170082CADE /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		8055DE712F373F3C0082CADE /* QRScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
+		8055DE732F37417B0082CADE /* BackendConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendConfig.swift; sourceTree = "<group>"; };
+		8055DE752F37418D0082CADE /* VerifyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyRequest.swift; sourceTree = "<group>"; };
+		8055DE772F3741990082CADE /* VerifyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyResponse.swift; sourceTree = "<group>"; };
+		8055DE792F3744460082CADE /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		8055DE7B2F37450F0082CADE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		8055DE7D2F3745240082CADE /* ErrorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateView.swift; sourceTree = "<group>"; };
+		8055DE7F2F3745330082CADE /* ResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseView.swift; sourceTree = "<group>"; };
+		80BCA2922F335816005D02CE /* miDNI-qr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "miDNI-qr.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80BCA2A02F33583B005D02CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80BCA2A12F33583B005D02CE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		80BCA2A22F33583B005D02CE /* app.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app.swift; sourceTree = "<group>"; };
+		80BCA2A72F335A25005D02CE /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		80BCA2A92F336018005D02CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80BCA28F2F335816005D02CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80BCA2892F335816005D02CE = {
+			isa = PBXGroup;
+			children = (
+				80BCA2A32F33583B005D02CE /* miDNI-qr */,
+				80BCA2932F335816005D02CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80BCA2932F335816005D02CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80BCA2922F335816005D02CE /* miDNI-qr.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80BCA2A32F33583B005D02CE /* miDNI-qr */ = {
+			isa = PBXGroup;
+			children = (
+				80BCA2A22F33583B005D02CE /* app.swift */,
+				80BCA2A02F33583B005D02CE /* Assets.xcassets */,
+				8055DE732F37417B0082CADE /* BackendConfig.swift */,
+				8055DE6F2F373F170082CADE /* CameraPreview.swift */,
+				8055DE7D2F3745240082CADE /* ErrorStateView.swift */,
+				80BCA2A92F336018005D02CE /* Info.plist */,
+				8055DE7B2F37450F0082CADE /* LoadingView.swift */,
+				80BCA2A12F33583B005D02CE /* MainView.swift */,
+				8055DE792F3744460082CADE /* MainViewModel.swift */,
+				8055DE712F373F3C0082CADE /* QRScannerController.swift */,
+				8055DE7F2F3745330082CADE /* ResponseView.swift */,
+				80BCA2A72F335A25005D02CE /* ScannerView.swift */,
+				8055DE752F37418D0082CADE /* VerifyRequest.swift */,
+				8055DE772F3741990082CADE /* VerifyResponse.swift */,
+			);
+			path = "miDNI-qr";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80BCA2912F335816005D02CE /* miDNI-qr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80BCA29D2F335817005D02CE /* Build configuration list for PBXNativeTarget "miDNI-qr" */;
+			buildPhases = (
+				80BCA28E2F335816005D02CE /* Sources */,
+				80BCA28F2F335816005D02CE /* Frameworks */,
+				80BCA2902F335816005D02CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "miDNI-qr";
+			packageProductDependencies = (
+			);
+			productName = "miDNI-qr";
+			productReference = 80BCA2922F335816005D02CE /* miDNI-qr.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80BCA28A2F335816005D02CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				ORGANIZATIONNAME = "Arturo Carretero Calvo";
+				TargetAttributes = {
+					80BCA2912F335816005D02CE = {
+						CreatedOnToolsVersion = 26.2;
+					};
+				};
+			};
+			buildConfigurationList = 80BCA28D2F335816005D02CE /* Build configuration list for PBXProject "miDNI-qr" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 80BCA2892F335816005D02CE;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 80BCA2932F335816005D02CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80BCA2912F335816005D02CE /* miDNI-qr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80BCA2902F335816005D02CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80BCA2A42F33583B005D02CE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80BCA28E2F335816005D02CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8055DE742F37417B0082CADE /* BackendConfig.swift in Sources */,
+				8055DE762F37418D0082CADE /* VerifyRequest.swift in Sources */,
+				80BCA2A82F335A25005D02CE /* ScannerView.swift in Sources */,
+				8055DE7C2F37450F0082CADE /* LoadingView.swift in Sources */,
+				8055DE782F3741990082CADE /* VerifyResponse.swift in Sources */,
+				8055DE7E2F3745240082CADE /* ErrorStateView.swift in Sources */,
+				8055DE702F373F170082CADE /* CameraPreview.swift in Sources */,
+				8055DE722F373F3C0082CADE /* QRScannerController.swift in Sources */,
+				80BCA2A52F33583B005D02CE /* MainView.swift in Sources */,
+				80BCA2A62F33583B005D02CE /* app.swift in Sources */,
+				8055DE7A2F3744460082CADE /* MainViewModel.swift in Sources */,
+				8055DE802F3745330082CADE /* ResponseView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		80BCA29B2F335817005D02CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Q4X55987WE;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		80BCA29C2F335817005D02CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Q4X55987WE;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80BCA29E2F335817005D02CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q4X55987WE;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "miDNI-qr/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "miDNI-QR";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Se necesita el permiso de cámara para poder analizar QR";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.artcc.miDNI-qr";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80BCA29F2F335817005D02CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q4X55987WE;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "miDNI-qr/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "miDNI-QR";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Se necesita el permiso de cámara para poder analizar QR";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.artcc.miDNI-qr";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80BCA28D2F335816005D02CE /* Build configuration list for PBXProject "miDNI-qr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80BCA29B2F335817005D02CE /* Debug */,
+				80BCA29C2F335817005D02CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80BCA29D2F335817005D02CE /* Build configuration list for PBXNativeTarget "miDNI-qr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80BCA29E2F335817005D02CE /* Debug */,
+				80BCA29F2F335817005D02CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 80BCA28A2F335816005D02CE /* Project object */;
+}
