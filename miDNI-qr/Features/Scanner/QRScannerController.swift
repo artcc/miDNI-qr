@@ -8,8 +8,7 @@
 
 import AVFoundation
 import CoreImage
-import SwiftUI
-import Vision
+import Foundation
 
 final class QRScannerController: NSObject {
     private var didDeliverPayload = false
@@ -78,9 +77,10 @@ final class QRScannerController: NSObject {
             guard let self else { return }
 
             if !self.isConfigured {
-                self.configureSession()
-                self.isConfigured = true
+                self.isConfigured = self.configureSession()
             }
+
+            guard self.isConfigured else { return }
 
             if !self.session.isRunning {
                 print("🎥 Starting capture session...")
@@ -97,15 +97,16 @@ final class QRScannerController: NSObject {
         }
     }
 
-    private func configureSession() {
+    private func configureSession() -> Bool {
         print("🎥 Configuring session...")
 
         guard !session.isRunning else {
             print("⚠️ Session already running")
-            return
+            return false
         }
 
         session.beginConfiguration()
+        defer { session.commitConfiguration() }
 
         // Use high resolution preset for better QR detection.
         if session.canSetSessionPreset(.high) {
@@ -119,22 +120,19 @@ final class QRScannerController: NSObject {
         // Configure camera input.
         guard let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) else {
             print("❌ Front camera not found")
-            session.commitConfiguration()
-            return
+            return false
         }
 
         print("🎥 Camera found: \(device.localizedName)")
 
         guard let input = try? AVCaptureDeviceInput(device: device) else {
             print("❌ Failed to create camera input")
-            session.commitConfiguration()
-            return
+            return false
         }
 
         guard session.canAddInput(input) else {
             print("❌ Cannot add input")
-            session.commitConfiguration()
-            return
+            return false
         }
 
         session.addInput(input)
@@ -143,29 +141,29 @@ final class QRScannerController: NSObject {
         // Configure metadata output for QR.
         guard session.canAddOutput(metadataOutput) else {
             print("❌ Cannot add metadata output")
-            session.commitConfiguration()
-            return
+            session.removeInput(input)
+            return false
         }
 
         session.addOutput(metadataOutput)
         print("🎥 Metadata output added")
 
-        // Set delegate AFTER adding the output.
-        metadataOutput.setMetadataObjectsDelegate(self, queue: metadataQueue)
-
         // Check available types and configure only QR.
         let availableTypes = metadataOutput.availableMetadataObjectTypes
         print("🎥 Available types: \(availableTypes.count)")
 
-        if availableTypes.contains(.qr) {
-            metadataOutput.metadataObjectTypes = [.qr]
-            print("🎥 Configured to detect: QR")
-        } else {
+        guard availableTypes.contains(.qr) else {
             print("❌ QR not available on this device")
+            session.removeOutput(metadataOutput)
+            session.removeInput(input)
+            return false
         }
 
-        session.commitConfiguration()
+        metadataOutput.setMetadataObjectsDelegate(self, queue: metadataQueue)
+        metadataOutput.metadataObjectTypes = [.qr]
+        print("🎥 Configured to detect: QR")
         print("🎥 Configuration completed ✅")
+        return true
     }
 
     private func setupSessionObserver() {
@@ -219,8 +217,7 @@ final class QRScannerController: NSObject {
     }
 
     private func extractBinaryPayload(from qrCode: AVMetadataMachineReadableCodeObject) -> Data? {
-        // Vision's CIQRCodeDescriptor.errorCorrectedPayload is the binary payload
-        // without text encoding.
+        // Send the error-corrected QR codewords unchanged, as expected by the backend.
         if let descriptor = qrCode.descriptor as? CIQRCodeDescriptor {
             let rawPayload = descriptor.errorCorrectedPayload
             print("📦 errorCorrectedPayload: \(rawPayload.count) bytes")
@@ -237,7 +234,6 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
         didOutput metadataObjects: [AVMetadataObject],
         from connection: AVCaptureConnection
     ) {
-
         // Bail out early if we've already delivered a payload.
         let alreadyDelivered = stateQueue.sync { didDeliverPayload }
 

@@ -11,13 +11,15 @@ import Foundation
 
 @MainActor
 final class MainViewModel: ObservableObject {
-    @Published var isScanning = true
-    @Published var isLoading = false
-    @Published var errorMessage: String?
-    @Published var response: VerifyResponse?
-    @Published var rawResponseText: String?
+    @Published private(set) var isScanning = true
+    @Published private(set) var isLoading = false
+    @Published private(set) var errorMessage: String?
+    @Published private(set) var response: VerifyResponse?
+    @Published private(set) var rawResponseText: String?
 
     func handleScan(_ payload: Data) {
+        guard isScanning else { return }
+
         isScanning = false
         isLoading = true
         errorMessage = nil
@@ -37,9 +39,10 @@ final class MainViewModel: ObservableObject {
     }
 
     private func sendPayload(_ payloadBytes: [UInt8]) async {
+        defer { isLoading = false }
+
         guard let url = URL(string: BackendConfig.baseURLString + "/verify") else {
             print("❌ Invalid backend URL")
-            isLoading = false
             errorMessage = "Invalid backend URL"
             return
         }
@@ -54,7 +57,6 @@ final class MainViewModel: ObservableObject {
             request.httpBody = try JSONEncoder().encode(body)
         } catch {
             print("❌ Failed to encode request: \(error)")
-            isLoading = false
             errorMessage = "Failed to encode request"
             return
         }
@@ -65,22 +67,20 @@ final class MainViewModel: ObservableObject {
             let responseText = String(data: data, encoding: .utf8) ?? "<empty>"
             print("✅ Backend response (status \(statusCode)): \(responseText)")
 
-            self.isLoading = false
-            self.rawResponseText = responseText
+            rawResponseText = responseText
 
             do {
                 let decoded = try JSONDecoder().decode(VerifyResponse.self, from: data)
                 if decoded.valid {
-                    self.response = decoded
+                    response = decoded
                 } else {
-                    self.errorMessage = decoded.reason ?? "Request failed"
+                    errorMessage = decoded.reason ?? "Request failed"
                 }
             } catch {
-                self.errorMessage = "Invalid response"
+                errorMessage = "Invalid response"
             }
         } catch {
-            self.isLoading = false
-            self.errorMessage = "Request failed: \(error.localizedDescription)"
+            errorMessage = "Request failed: \(error.localizedDescription)"
         }
     }
 }

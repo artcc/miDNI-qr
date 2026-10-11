@@ -9,6 +9,6 @@
 import Foundation
 
 enum BackendConfig {
-    static let baseURLString = "https://midni-backend.onrender.com"
-    static let bearerToken = "c1f92d5de20e8863e512a22345b31375"
+    static let baseURLString = "baseURLString"
+    static let bearerToken = "bearerToken"
 }
